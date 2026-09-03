@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAY 5</title>
+  <link rel="stylesheet" href="style .css" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          boxShadow: {
+            glow: '0 20px 60px rgba(124,58,237,.15)'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-slate-50 text-slate-900 selection:bg-violet-200 selection:text-violet-900">
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-xl">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
+      <button onclick="showPage('home')" class="flex items-center gap-3">
+        <span class="grid h-11 w-11 place-items-center rounded-2xl bg-violet-600 text-xl font-black text-white shadow-lg shadow-violet-200">CS</span>
+        <span class="text-left">
+          <span class="block text-lg font-black tracking-tight">Career<span class="text-violet-600">Sphere</span></span>
+          <span class="hidden text-xs font-medium text-slate-500 sm:block">Find. Prepare. Apply. Grow.</span>
+        </span>
+      </button>
+
+      <nav class="hidden items-center gap-7 md:flex">
+        <button onclick="showPage('home')" class="font-semibold text-slate-600 hover:text-violet-600">Home</button>
+        <button onclick="showPage('profile')" class="font-semibold text-slate-600 hover:text-violet-600">My Profile</button>
+        <button onclick="showPage('jobs')" class="font-semibold text-slate-600 hover:text-violet-600">Find Jobs</button>
+      </nav>
+
+      <button onclick="showPage('profile')" class="rounded-xl bg-violet-600 px-4 py-2.5 text-sm font-bold text-white shadow-lg shadow-violet-200 transition hover:-translate-y-0.5 hover:bg-violet-700">
+        Build Profile
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HOME -->
+    <section id="homePage" class="page">
+      <div class="relative overflow-hidden bg-white">
+        <div class="absolute -left-24 top-10 h-72 w-72 rounded-full bg-violet-200/40 blur-3xl"></div>
+        <div class="absolute right-0 top-0 h-96 w-96 rounded-full bg-fuchsia-100/60 blur-3xl"></div>
+
+        <div class="relative mx-auto grid max-w-7xl items-center gap-14 px-5 py-20 lg:grid-cols-2 lg:px-8 lg:py-28">
+          <div>
+            <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-violet-200 bg-violet-50 px-4 py-2 text-sm font-bold text-violet-700">
+              <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
+              Your smarter career journey starts here
+            </div>
+
+            <h1 class="max-w-3xl text-5xl font-black leading-[1.05] tracking-tight sm:text-6xl">
+              Turn your skills into
+              <span class="text-violet-600"> opportunities.</span>
+            </h1>
+
+            <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
+              CareerSphere helps you build your professional profile, discover suitable jobs,
+              understand requirements, prepare for interviews, and apply with confidence.
+            </p>
+
+            <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+              <button onclick="showPage('profile')" class="rounded-2xl bg-violet-600 px-7 py-4 font-bold text-white shadow-xl shadow-violet-200 transition hover:-translate-y-1 hover:bg-violet-700">
+                Create My Profile →
+              </button>
+              <button onclick="showPage('jobs')" class="rounded-2xl border border-slate-200 bg-white px-7 py-4 font-bold text-slate-700 shadow-sm transition hover:-translate-y-1 hover:border-violet-300 hover:text-violet-700">
+                Explore Jobs
+              </button>
+            </div>
+
+            <div class="mt-8 flex flex-wrap gap-x-7 gap-y-3 text-sm font-semibold text-slate-500">
+              <span>✓ Profile matching</span>
+              <span>✓ Skill requirements</span>
+              <span>✓ Interview preparation</span>
+            </div>
+          </div>
+
+          <!-- GROW WITH CAREERSPHERE PANEL -->
+          <div class="relative">
+            <div class="absolute -inset-5 rounded-[2.5rem] bg-gradient-to-br from-violet-100 via-white to-fuchsia-100 blur-2xl"></div>
+            <div class="relative overflow-hidden rounded-[2rem] border border-violet-100 bg-white p-6 shadow-glow">
+              <div class="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-violet-100"></div>
+
+              <div class="relative flex items-center justify-between">
+                <div>
+                  <p class="text-sm font-black uppercase tracking-wider text-violet-600">Career Growth</p>
+                  <h2 class="mt-1 text-2xl font-black">Grow with CareerSphere</h2>
+                </div>
+                <span class="grid h-14 w-14 place-items-center rounded-2xl bg-violet-50 text-2xl">🚀</span>
+              </div>
+
+              <p class="relative mt-4 text-sm leading-6 text-slate-500">
+                Build your profile, discover matching opportunities, prepare for interviews,
+                and take the next step in your career.
+              </p>
+
+              <div class="relative mt-6 rounded-2xl bg-slate-50 p-4">
+                <div class="flex items-center justify-between">
+                  <span class="text-sm font-bold text-slate-700">Career Growth</span>
+                  <span class="text-sm font-black text-violet-700">75%</span>
+                </div>
+                <div class="mt-3 h-2.5 overflow-hidden rounded-full bg-slate-200">
+                  <div class="h-2.5 w-3/4 rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500"></div>
+                </div>
+              </div>
+
+              <div class="relative mt-5 grid gap-3">
+                <button onclick="showPage('profile')" class="flex items-center justify-between rounded-2xl border border-slate-200 bg-white p-4 text-left transition hover:-translate-y-0.5 hover:border-violet-200 hover:shadow-md">
+                  <span>
+                    <span class="block text-sm font-black">Build Your Profile</span>
+                    <span class="mt-1 block text-xs text-slate-500">Add skills, education & projects</span>
+                  </span>
+                  <span class="grid h-9 w-9 place-items-center rounded-xl bg-emerald-50 font-black text-emerald-600">✓</span>
+                </button>
+
+                <button onclick="showPage('jobs')" class="flex items-center justify-between rounded-2xl border border-slate-200 bg-white p-4 text-left transition hover:-translate-y-0.5 hover:border-violet-200 hover:shadow-md">
+                  <span>
+                    <span class="block text-sm font-black">Find Opportunities</span>
+                    <span class="mt-1 block text-xs text-slate-500">Filter jobs that fit your goals</span>
+                  </span>
+                  <span class="grid h-9 w-9 place-items-center rounded-xl bg-violet-50 font-black text-violet-700">→</span>
+                </button>
+
+                <button onclick="showPage('jobs')" class="flex items-center justify-between rounded-2xl border border-slate-200 bg-white p-4 text-left transition hover:-translate-y-0.5 hover:border-violet-200 hover:shadow-md">
+                  <span>
+                    <span class="block text-sm font-black">Prepare & Improve</span>
+                    <span class="mt-1 block text-xs text-slate-500">Check requirements before applying</span>
+                  </span>
+                  <span class="grid h-9 w-9 place-items-center rounded-xl bg-fuchsia-50 font-black text-fuchsia-700">→</span>
+                </button>
+              </div>
+
+              <div class="relative mt-5 rounded-2xl bg-gradient-to-r from-violet-600 to-fuchsia-600 p-5 text-white">
+                <p class="text-xs font-bold uppercase tracking-wider text-violet-100">Your Journey Starts Here</p>
+                <div class="mt-1 flex items-center justify-between gap-4">
+                  <div>
+                    <p class="font-black">Ready to grow?</p>
+                    <p class="mt-1 text-xs text-violet-100">One profile. Better opportunities.</p>
+                  </div>
+                  <button onclick="showPage('profile')" class="rounded-xl bg-white px-4 py-2 text-sm font-black text-violet-700 transition hover:scale-105">
+                    Start Growing →
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mx-auto max-w-7xl px-5 py-16 lg:px-8">
+        <div class="text-center">
+          <p class="font-bold text-violet-600">HOW IT WORKS</p>
+          <h2 class="mt-2 text-3xl font-black tracking-tight sm:text-4xl">Everything you need in one place</h2>
+          <p class="mx-auto mt-3 max-w-2xl text-slate-500">A simple four-step journey from profile creation to application.</p>
+        </div>
+
+        <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+            <span class="grid h-12 w-12 place-items-center rounded-2xl bg-violet-100 font-black text-violet-700">01</span>
+            <h3 class="mt-5 text-lg font-black">Build Profile</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-500">Add your education, skills, projects and professional details.</p>
+          </div>
+          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+            <span class="grid h-12 w-12 place-items-center rounded-2xl bg-fuchsia-100 font-black text-fuchsia-700">02</span>
+            <h3 class="mt-5 text-lg font-black">Discover Jobs</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-500">Use the new sidebar to filter jobs by location, experience, salary and skills.</p>
+          </div>
+          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+            <span class="grid h-12 w-12 place-items-center rounded-2xl bg-indigo-100 font-black text-indigo-700">03</span>
+            <h3 class="mt-5 text-lg font-black">Prepare</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-500">See role-specific skills and questions before applying.</p>
+          </div>
+          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+            <span class="grid h-12 w-12 place-items-center rounded-2xl bg-emerald-100 font-black text-emerald-700">04</span>
+            <h3 class="mt-5 text-lg font-black">Apply</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-500">Send the application details to the configured CareerSphere email.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROFILE -->
+    <section id="profilePage" class="page hidden">
+      <div class="bg-white">
+        <div class="mx-auto max-w-4xl px-5 py-12 lg:px-8">
+          <div class="mb-8">
+            <span class="rounded-full bg-violet-50 px-4 py-2 text-sm font-bold text-violet-700">STEP 1 · YOUR PROFILE</span>
+            <h1 class="mt-5 text-4xl font-black tracking-tight">Create your professional profile</h1>
+            <p class="mt-3 text-slate-500">The information you add here is used to calculate job profile matches.</p>
+          </div>
+
+          <form id="profileForm" class="space-y-6">
+            <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+              <h2 class="text-xl font-black">Personal & Professional</h2>
+              <div class="mt-5 grid gap-5 sm:grid-cols-2">
+                <label class="block"><span class="label">Full Name</span><input id="name" required class="input" placeholder="Your name"></label>
+                <label class="block"><span class="label">Email</span><input id="email" type="email" required class="input" placeholder="you@example.com"></label>
+                <label class="block"><span class="label">Phone</span><input id="phone" class="input" placeholder="+91 ..."></label>
+                <label class="block"><span class="label">Profession</span><input id="profession" class="input" placeholder="Student / Developer / Analyst"></label>
+                <label class="block"><span class="label">Experience</span><select id="experience" class="input"><option>Fresher</option><option>0–2 Years</option><option>1–3 Years</option><option>3+ Years</option></select></label>
+                <label class="block"><span class="label">Preferred Location</span><input id="location" class="input" placeholder="Pune / Bangalore / Remote"></label>
+              </div>
+            </div>
+
+            <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+              <h2 class="text-xl font-black">Education</h2>
+              <div class="mt-5 grid gap-5 sm:grid-cols-2">
+                <label class="block"><span class="label">College</span><input id="college" class="input" placeholder="College name"></label>
+                <label class="block"><span class="label">Degree</span><input id="degree" class="input" placeholder="B.Tech / B.E / MCA"></label>
+                <label class="block"><span class="label">Branch</span><input id="branch" class="input" placeholder="CSE / AIML / IT"></label>
+                <label class="block"><span class="label">Graduation Year</span><input id="graduation" class="input" placeholder="2027"></label>
+                <label class="block sm:col-span-2"><span class="label">CGPA</span><input id="cgpa" class="input" placeholder="8.5"></label>
+              </div>
+            </div>
+
+            <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+              <h2 class="text-xl font-black">Skills & Projects</h2>
+              <div class="mt-5 space-y-5">
+                <label class="block"><span class="label">Skills</span><input id="skills" class="input" placeholder="Java, Python, DSA, HTML, CSS, JavaScript"></label>
+                <label class="block"><span class="label">Projects</span><textarea id="projects" rows="4" class="input" placeholder="Tell us about your best projects..."></textarea></label>
+                <div class="grid gap-5 sm:grid-cols-2">
+                  <label class="block"><span class="label">GitHub ID / Link</span><input id="github" class="input" placeholder="github.com/username"></label>
+                  <label class="block"><span class="label">LinkedIn</span><input id="linkedin" class="input" placeholder="linkedin.com/in/username"></label>
+                </div>
+                <label class="block">
+                  <span class="label">Resume</span>
+                  <input id="resume" type="file" accept=".pdf,.doc,.docx" class="block w-full rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-4 text-sm text-slate-500 file:mr-4 file:rounded-xl file:border-0 file:bg-violet-100 file:px-4 file:py-2 file:font-bold file:text-violet-700">
+                  <span class="mt-2 block text-xs text-slate-400">The file name is saved in the browser for the prototype. The application email includes the resume name.</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+              <h2 class="text-xl font-black">Skill-Based Questions</h2>
+              <div class="mt-5 space-y-5">
+                <label class="block"><span class="label">Coding Level</span><select id="codingLevel" class="input"><option>Beginner</option><option>Intermediate</option><option>Advanced</option></select></label>
+                <label class="block"><span class="label">What area do you want to grow in?</span><input id="interest" class="input" placeholder="AI/ML, Web Development, Data, Software..."></label>
+              </div>
+            </div>
+
+            <button class="w-full rounded-2xl bg-violet-600 px-6 py-4 font-black text-white shadow-xl shadow-violet-200 transition hover:bg-violet-700" type="submit">
+              Save Profile & Find Jobs →
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- JOBS -->
+    <section id="jobsPage" class="page hidden">
+      <div class="mx-auto max-w-7xl px-5 py-12 lg:px-8">
+        <div class="flex flex-col justify-between gap-5 md:flex-row md:items-end">
+          <div>
+            <span class="rounded-full bg-violet-50 px-4 py-2 text-sm font-bold text-violet-700">STEP 2 · JOB DISCOVERY</span>
+            <h1 class="mt-5 text-4xl font-black tracking-tight">Find your next role</h1>
+            <p class="mt-3 text-slate-500">Use the sidebar like a job-search control panel and find roles matching your profile.</p>
+          </div>
+          <button onclick="showPage('profile')" class="rounded-xl border border-slate-200 bg-white px-4 py-3 font-bold hover:border-violet-300 hover:text-violet-700">Edit Profile</button>
+        </div>
+
+        <!-- MOBILE SEARCH -->
+        <div class="mt-8 grid gap-3 rounded-3xl border border-slate-200 bg-white p-4 shadow-sm md:hidden">
+          <input id="jobSearchMobile" oninput="syncMobileSearch()" class="input" placeholder="🔎 Job, company or skill">
+        </div>
+
+        <!-- SIDEBAR + JOB GRID -->
+        <div class="mt-8 grid gap-6 lg:grid-cols-[280px_1fr]">
+          <!-- FILTER SIDEBAR -->
+          <aside class="h-fit rounded-3xl border border-violet-100 bg-violet-50/70 p-5 shadow-sm lg:sticky lg:top-28">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-xs font-black uppercase tracking-wider text-violet-600">Search Controls</p>
+                <h2 class="mt-1 text-xl font-black">Filters</h2>
+              </div>
+              <span class="grid h-10 w-10 place-items-center rounded-xl bg-white text-lg shadow-sm">⚙️</span>
+            </div>
+
+            <div class="mt-6 space-y-5">
+              <label class="block">
+                <span class="label">Job / Company / Skill</span>
+                <input id="jobSearch" oninput="renderJobs()" class="input bg-white" placeholder="e.g. Python, Google">
+              </label>
+
+              <label class="block">
+                <span class="label">Location</span>
+                <select id="filterLocation" onchange="renderJobs()" class="input bg-white">
+                  <option value="">All locations</option>
+                  <option>Bangalore</option>
+                  <option>Hyderabad</option>
+                  <option>Pune</option>
+                  <option>Mumbai</option>
+                  <option>Noida</option>
+                  <option>Remote</option>
+                </select>
+              </label>
+
+              <label class="block">
+                <span class="label">Experience</span>
+                <select id="filterExperience" onchange="renderJobs()" class="input bg-white">
+                  <option value="">All experience</option>
+                  <option>Fresher</option>
+                  <option>0–2 Years</option>
+                  <option>1–2 Years</option>
+                  <option>1–3 Years</option>
+                  <option>3+ Years</option>
+                </select>
+              </label>
+
+              <label class="block">
+                <span class="label">Work Mode</span>
+                <select id="filterType" onchange="renderJobs()" class="input bg-white">
+                  <option value="">All work types</option>
+                  <option>On-site</option>
+                  <option>Hybrid</option>
+                  <option>Remote</option>
+                </select>
+              </label>
+
+              <label class="block">
+                <span class="label">Company</span>
+                <select id="filterCompany" onchange="renderJobs()" class="input bg-white">
+                  <option value="">All companies</option>
+                  <option>Google</option>
+                  <option>Microsoft</option>
+                  <option>Amazon</option>
+                  <option>Infosys</option>
+                  <option>Accenture</option>
+                  <option>TCS</option>
+                  <option>IBM</option>
+                  <option>Adobe</option>
+                  <option>Deloitte</option>
+                  <option>Wipro</option>
+                  <option>Capgemini</option>
+                </select>
+              </label>
+
+              <label class="block">
+                <span class="label">Main Skill</span>
+                <select id="filterSkill" onchange="renderJobs()" class="input bg-white">
+                  <option value="">All skills</option>
+                  <option>Java</option>
+                  <option>Python</option>
+                  <option>DSA</option>
+                  <option>C++</option>
+                  <option>SQL</option>
+                  <option>AI</option>
+                  <option>ML</option>
+                  <option>Machine Learning</option>
+                  <option>JavaScript</option>
+                  <option>HTML</option>
+                  <option>AWS</option>
+                </select>
+              </label>
+
+              <div>
+                <div class="flex items-center justify-between">
+                  <span class="label mb-0">Minimum Salary</span>
+                  <span id="salaryValue" class="text-sm font-black text-violet-700">₹0 LPA+</span>
+                </div>
+                <input id="salaryFilter" type="range" min="0" max="25" value="0" step="1" oninput="renderJobs()" class="mt-4 w-full accent-violet-600">
+                <div class="mt-2 flex justify-between text-xs font-semibold text-slate-400">
+                  <span>₹0 LPA</span><span>₹25 LPA</span>
+                </div>
+              </div>
+
+              <button onclick="applyRecommendedFilters()" class="w-full rounded-2xl bg-gradient-to-r from-violet-600 to-fuchsia-600 px-5 py-3.5 font-black text-white shadow-lg transition hover:-translate-y-0.5">
+                ✨ Show My Matches
+              </button>
+
+              <button onclick="resetFilters()" class="w-full rounded-2xl bg-white px-5 py-3.5 font-black text-slate-700 shadow-sm ring-1 ring-slate-200 transition hover:bg-slate-50">
+                Reset Filters
+              </button>
+            </div>
+          </aside>
+
+          <!-- JOB RESULTS -->
+          <div class="min-w-0">
+            <div class="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p id="jobCount" class="text-sm font-bold text-slate-500">Showing jobs</p>
+              </div>
+              <div class="hidden items-center gap-2 rounded-2xl border border-slate-200 bg-white px-4 py-2.5 text-xs font-bold text-slate-500 sm:flex">
+                <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
+                Profile matching enabled
+              </div>
+            </div>
+
+            <div id="jobsGrid" class="grid gap-5 xl:grid-cols-2"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERVIEW + APPLICATION -->
+    <section id="interviewPage" class="page hidden">
+      <div class="mx-auto max-w-5xl px-5 py-12 lg:px-8">
+        <span class="rounded-full bg-violet-50 px-4 py-2 text-sm font-bold text-violet-700">STEP 3 · PREPARE & APPLY</span>
+        <h1 class="mt-5 text-4xl font-black tracking-tight">Get interview-ready</h1>
+        <div id="selectedJobBox" class="mt-8"></div>
+
+        <div class="mt-6 grid gap-5 md:grid-cols-3">
+          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+            <span class="text-2xl">🎯</span>
+            <h3 class="mt-4 font-black">Know the role</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-500">Review required skills, education and experience before applying.</p>
+          </div>
+          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+            <span class="text-2xl">💡</span>
+            <h3 class="mt-4 font-black">Prepare answers</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-500">Think about your projects, strengths and why you fit the role.</p>
+          </div>
+          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+            <span class="text-2xl">🚀</span>
+            <h3 class="mt-4 font-black">Apply confidently</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-500">Submit the application after checking the role requirements.</p>
+          </div>
+        </div>
+
+        <div class="mt-6 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h2 class="text-xl font-black">Practice Questions</h2>
+          <div class="mt-5 space-y-3">
+            <div class="rounded-2xl bg-slate-50 p-4 font-semibold">Why are you suitable for this role?</div>
+            <div class="rounded-2xl bg-slate-50 p-4 font-semibold">Which project are you most proud of?</div>
+            <div class="rounded-2xl bg-slate-50 p-4 font-semibold">What would you like to learn in this role?</div>
+          </div>
+        </div>
+
+        <!-- APPLICATION FORM -->
+        <div class="mt-6 rounded-3xl border border-violet-100 bg-white p-6 shadow-glow">
+          <div class="flex flex-col justify-between gap-3 sm:flex-row sm:items-center">
+            <div>
+              <p class="text-xs font-black uppercase tracking-wider text-violet-600">Final Step</p>
+              <h2 class="mt-1 text-2xl font-black">Submit your application</h2>
+            </div>
+            <span class="rounded-full bg-emerald-50 px-3 py-2 text-xs font-black text-emerald-700">Secure application form</span>
+          </div>
+
+          <p class="mt-3 text-sm leading-6 text-slate-500">
+            Your application details will be submitted to the CareerSphere receiving email configured in this project.
+          </p>
+
+          <form id="applicationForm" class="mt-6 grid gap-5 sm:grid-cols-2">
+            <label class="block"><span class="label">Full Name</span><input id="applicationName" name="name" required class="input" placeholder="Your full name"></label>
+            <label class="block"><span class="label">Email</span><input id="applicationEmail" name="email" type="email" required class="input" placeholder="your@email.com"></label>
+            <label class="block"><span class="label">Phone</span><input id="applicationPhone" name="phone" class="input" placeholder="+91 ..."></label>
+            <label class="block"><span class="label">College</span><input id="applicationCollege" name="college" class="input" placeholder="College name"></label>
+            <label class="block"><span class="label">Degree</span><input id="applicationDegree" name="degree" class="input" placeholder="B.Tech / B.E / MCA"></label>
+            <label class="block"><span class="label">Skills</span><input id="applicationSkills" name="skills" class="input" placeholder="Java, Python, DSA"></label>
+            <label class="block sm:col-span-2"><span class="label">Why are you suitable for this role?</span><textarea id="applicationMessage" name="message" rows="4" class="input" placeholder="Briefly describe your skills, projects and interest in this role."></textarea></label>
+
+            <div class="sm:col-span-2 rounded-2xl bg-violet-50 p-4">
+              <div class="flex items-start gap-3">
+                <span class="text-xl">📄</span>
+                <div>
+                  <p class="text-sm font-black text-violet-900">Resume</p>
+                  <p id="applicationResume" class="mt-1 text-xs text-violet-700">No resume selected</p>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="sm:col-span-2 w-full rounded-2xl bg-violet-600 px-6 py-4 font-black text-white shadow-xl shadow-violet-200 transition hover:bg-violet-700">
+              Send Application →
+            </button>
+          </form>
+
+          <p class="mt-4 text-center text-xs text-slate-400">
+            CareerSphere prototype • Application email is handled through the configured form endpoint.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONFIRMATION -->
+    <section id="confirmationPage" class="page hidden">
+      <div class="mx-auto max-w-3xl px-5 py-20 text-center lg:px-8">
+        <div class="mx-auto grid h-20 w-20 place-items-center rounded-full bg-emerald-100 text-4xl">✓</div>
+        <p class="mt-7 font-bold text-emerald-600">APPLICATION SUBMITTED</p>
+        <h1 class="mt-3 text-4xl font-black tracking-tight sm:text-5xl">You're one step closer! 🎉</h1>
+        <p class="mx-auto mt-5 max-w-xl leading-7 text-slate-500">
+          Your application has been prepared and submitted. Keep your email available for the next communication.
+        </p>
+        <div id="confirmationDetails" class="mt-8 rounded-3xl border border-slate-200 bg-white p-6 text-left shadow-sm"></div>
+        <button onclick="showPage('jobs')" class="mt-6 rounded-2xl bg-violet-600 px-7 py-4 font-black text-white shadow-xl shadow-violet-200 hover:bg-violet-700">Explore More Jobs</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-200 bg-white">
+    <div class="mx-auto flex max-w-7xl flex-col justify-between gap-3 px-5 py-8 text-sm text-slate-500 sm:flex-row lg:px-8">
+      <p>© 2026 CareerSphere. Smart career discovery prototype.</p>
+      <p class="font-semibold">Built with HTML + Tailwind CSS + JavaScript</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
